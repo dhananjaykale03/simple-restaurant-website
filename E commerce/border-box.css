@@ -1,0 +1,172 @@
+* {
+  padding: 0;
+  margin: 0;
+
+  box-sizing: border-box;
+
+  font-family: "Baloo Bhai 2", cursive;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+
+  background-color: #262626;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  overflow: hidden;
+}
+/* #navbar{
+position:fixed;
+top:0;
+left:0;
+} */
+
+ul {
+  display: flex;
+  list-style: none;
+  /* text-align: center; */
+  color: #fff;
+  gap: 2rem;
+  position: fixed;
+  right: 0;
+  padding-right: 15px;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+}
+a:hover {
+  background-color: rgb(22, 22, 94);
+  border-radius: 10px;
+  padding: 10px;
+}
+.logo {
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-size: 2rem;
+  color: #fff;
+
+  margin-right: 700px;
+}
+.btn {
+  margin-top: 30px;
+
+  color: white;
+  cursor: pointer;
+  border-radius: 25px;
+  padding: 1rem 2rem;
+}
+
+img {
+  width: 100%;
+
+  object-fit: cover;
+  object-position: center;
+}
+header {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)),
+    url(https://images.unsplash.com/photo-1589302168068-964664d93dc0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80);
+  background-position: center;
+  background-size: cover;
+
+  height: 100vh;
+}
+#home {
+  display: flex;
+
+  text-align: center;
+  flex-direction: column;
+  padding: 220px 200px;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+}
+.overlay {
+  background: rgb(0, 0, 0, -5);
+  height: 100vh;
+}
+#mobile {
+  display: none;
+  height: 70px;
+  line-height: 40px;
+  /* background-color: rgba(0, 0, 0, 0.200); */
+  background-color: #262626;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+#mobile ul li {
+  justify-content: flex-end;
+  padding: -25px 5px;
+  margin: -38px 0;
+  font-size: 1rem;
+  color: white;
+}
+#mobile ul li a {
+  display: flex;
+  text-decoration: none;
+  color: white;
+}
+@media screen and (max-width: 768px) {
+  #mobile {
+    display: block;
+  }
+  #navbar {
+    display: none;
+  }
+  #home {
+    display: flex;
+
+    margin-top: 20px;
+
+    text-align: center;
+
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+  }
+
+  .logo1 {
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: 1.8rem;
+    color: #fff;
+
+    margin-left: 20px;
+    margin-right: 500px;
+    margin-top: 15px;
+  }
+  a:hover {
+    background-color: rgb(22, 22, 94);
+    border-radius: 16px;
+    padding: 6px 8px 6px 8px;
+    margin: -7px;
+  }
+  header {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)),
+      url(https://images.unsplash.com/photo-1589302168068-964664d93dc0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80);
+    background-position: center;
+    background-size: cover;
+
+    height: 180vh;
+  }
+}
+.title {
+  text-align: center;
+  width: 100%;
+  color: yellow;
+}

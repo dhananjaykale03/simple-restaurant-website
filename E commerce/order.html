@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Form</title>
+<style>
+body { font-family: Arial, sans-serif; background:#e57732; padding:20px; }
+.title1 { text-align:center; margin-bottom:20px; }
+.order-form { max-width:400px; margin:auto; background:white; padding:20px; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.2); display:flex; flex-direction:column; gap:10px; }
+.inp_box { padding:10px; border-radius:8px; border:1px solid #ccc; width:100%; }
+.text_area { height:80px; resize:none; }
+button { padding:10px; border:none; border-radius:8px; background:linear-gradient(135deg, #ff6a00, #ee0979); color:white; cursor:pointer; font-size:16px; }
+</style>
+</head>
+<body>
+
+<h1 class="title1">Order</h1>
+<form id="orderForm" class="order-form">
+  <input type="text" class="inp_box" name="name" placeholder="Full Name" required>
+  <input type="tel" class="inp_box" name="phone" placeholder="Phone Number" required>
+  <input type="email" class="inp_box" name="email" placeholder="Email" required>
+
+  <select class="inp_box" name="food" required id="foodSelect">
+    <option value="">-- Choose a Dish --</option>
+    <optgroup label="🥦 Veg Dishes">
+      <option value="Kadai Paneer">Kadai Paneer</option>
+      <option value="Chole Bhature">Chole Bhature</option>
+      <option value="Vada Pav">Vada Pav</option>
+      <option value="Dal Fry">Dal Fry</option>
+      <option value="Bhindi Fry">Bhindi Fry</option>
+      <option value="Masala Dosa">Masala Dosa</option>
+      <option value="Paneer Butter Masala">Paneer Butter Masala</option>
+      <option value="Veg Biryani">Veg Biryani</option>
+      <option value="Aloo Gobi">Aloo Gobi</option>
+      <option value="Mutter Paneer">Mutter Paneer</option>
+    </optgroup>
+    <optgroup label="🍗 Non-Veg Dishes">
+      <option value="Chicken Curry">Chicken Curry</option>
+      <option value="Butter Chicken">Butter Chicken</option>
+      <option value="Mutton Rogan Josh">Mutton Rogan Josh</option>
+      <option value="Fish Fry">Fish Fry</option>
+      <option value="Prawns Masala">Prawns Masala</option>
+      <option value="Egg Curry">Egg Curry</option>
+      <option value="Chicken Biryani">Chicken Biryani</option>
+      <option value="Mutton Biryani">Mutton Biryani</option>
+      <option value="Tandoori Chicken">Tandoori Chicken</option>
+      <option value="Fish Curry">Fish Curry</option>
+    </optgroup>
+  </select>
+  </select>
+
+  <input type="number" class="inp_box" name="quantity" min="1" value="1" required placeholder="Quantity">
+  <textarea class="inp_box text_area" name="address" placeholder="Delivery Address" required></textarea>
+
+  <button type="submit">Proceed to Payment</button>
+</form>
+
+<script>
+// Get selected dish from URL
+const params = new URLSearchParams(window.location.search);
+const selectedFood = params.get("food");
+if(selectedFood) {
+  document.getElementById("foodSelect").value = selectedFood;
+}
+
+// Redirect to payment page on form submit
+document.getElementById("orderForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  window.location.href = "payment.html?food=" + encodeURIComponent(document.getElementById("foodSelect").value);
+});
+</script>
+
+</body>
+</html>

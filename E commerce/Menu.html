@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Menu</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    .menu-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+    .card:hover { transform: translateY(-5px); }
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+    .card h3 {
+      margin: 10px 0 5px;
+    }
+    .card p {
+      color: #555;
+      font-size: 14px;
+      margin: 5px 0;
+    }
+    .price {
+      font-weight: bold;
+      color: #e63946;
+      margin: 5px 0;
+    }
+    button {
+      background: linear-gradient(135deg, #ff6a00, #ee0979);
+      color: white;
+      border: none;
+      padding: 10px;
+      margin: 10px;
+      width: 90%;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🍴 Our Menu</h1>
+  <div class="menu-container">
+
+    <!-- 20 Menu Cards -->
+    <div class="card">
+      <img src="https://th.bing.com/th/id/OIP.2vsjRO-RGYTPGr2zKJn3QwHaLG?w=129&h=193&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Kadai Paneer">
+      <h3>Kadai Paneer</h3>
+      <p>Spicy & flavorful paneer curry</p>
+      <p class="price">₹160</p>
+<button onclick="window.location.href='order.html?food=Kadai Paneer'">Order Now</button>
+
+    </div>
+
+    <div class="card">
+      <img src="https://th.bing.com/th/id/OIP.glgChmwTbJxSyCzE6sJ4SgHaHY?w=156&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Chole Bhature">
+      <h3>Chole Bhature</h3>
+      <p>Fluffy bhature with spicy chole</p>
+      <p class="price">₹120</p>
+      <button onclick="orderNow('Chole Bhature',120)">Order Now</button>
+    </div>
+
+    <div class="card">
+      <img src="https://th.bing.com/th/id/OIP.TDENRp9PIDbwIXvtAQBe-QHaLH?w=123&h=185&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Vada Pav">
+      <h3>Vada Pav</h3>
+      <p>Mumbai’s favorite street snack</p>
+      <p class="price">₹40</p>
+      <button onclick="orderNow('Vada Pav',40)">Order Now</button>
+    </div>
+
+    <div class="card">
+      <img src="https://th.bing.com/th/id/OIP.dkMSAfIB56j5IB9QPWIEIAHaHa?w=201&h=201&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Dal Fry">
+      <h3>Dal Fry</h3>
+      <p>Rich and creamy dal fry</p>
+      <p class="price">₹100</p>
+      <button onclick="orderNow('Dal Fry',100)">Order Now</button>
+    </div>
+
+    <div class="card">
+      <img src="https://th.bing.com/th/id/OIP.OwfYLSgS5Qk-Ld5Pc1EdMQHaHa?w=182&h=182&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Bhindi Fry">
+      <h3>Bhindi Fry</h3>
+      <p>Stir fried crispy okra</p>
+      <p class="price">₹90</p>
+      <button onclick="orderNow('Bhindi Fry',90)">Order Now</button>
+    </div>
+
+    <div class="card">
+      <img src="https://th.bing.com/th/id/OIP.XSCo5S6kP3o-7-jVqH4vGgHaE8?w=249&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Dosa">
+      <h3>Dosa</h3>
+      <p>Crispy dosa with chutney</p>
+      <p class="price">₹80</p>
+      <button onclick="orderNow('Dosa',80)">Order Now</button>
+    </div>
+
+    <div class="card">
+      <img src="https://th.bing.com/th/id/OIP.LlDfIy5Q_N-vlqk4Dh9LQwHaJ0?w=208&h=344&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Pasta">
+      <h3>Pasta</h3>
+      <p>Creamy white sauce pasta</p>
+      <p class="price">₹150</p>
+      <button onclick="orderNow('Pasta',150)">Order Now</button>
+    </div>
+
+    <div class="card">
+      <img src="https://th.bing.com/th/id/OIP.ildCrKedl5wZSDvDouexMQHaEo?w=311&h=194&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Pizza">
+      <h3>Pizza</h3>
+      <p>Cheesy loaded pizza</p>
+      <p class="price">₹200</p>
+      <button onclick="orderNow('Pizza',200)">Order Now</button>
+    </div>
+
+    <div class="card">
+      <img src="https://th.bing.com/th/id/OIP.KJrb7W2FgB9DLvCKXOTo0wHaE8?w=284&h=189&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Burger">
+      <h3>Burger</h3>
+      <p>Juicy burger with fries</p>
+      <p class="price">₹110</p>
+      <button onclick="orderNow('Burger',110)">Order Now</button>
+    </div>
+
+    <div class="card">
+      <img src="https://th.bing.com/th/id/OIP.33XiTji_o9X_vdy0kiy47QHaE8?w=303&h=202&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Sandwich">
+      <h3>Sandwich</h3>
+      <p>Grilled veggie sandwich</p>
+      <p class="price">₹70</p>
+      <button onclick="orderNow('Sandwich',70)">Order Now</button>
+    </div>
+
+    <!-- Add 10 more items -->
+    <div class="card"><img src="https://th.bing.com/th/id/OIP.6Dz8Pnyz38XvCpFBSDYVEgHaLL?w=119&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Idli"><h3>Idli</h3><p>Steamed rice cakes</p><p class="price">₹60</p><button onclick="orderNow('Idli',60)">Order Now</button></div>
+    <div class="card"><img src="https://th.bing.com/th/id/OIP.niF8N9Z3Hl8u7-rC6c5rHQHaHa?w=170&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Biryani"><h3>Biryani</h3><p>Fragrant spiced rice</p><p class="price">₹180</p><button onclick="orderNow('Biryani',180)">Order Now</button></div>
+    <div class="card"><img src="https://th.bing.com/th/id/OIP.Xp2RQVjyCr3kN1G8VhcK_wHaE_?w=277&h=187&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Samosa"><h3>Samosa</h3><p>Crispy fried snack</p><p class="price">₹30</p><button onclick="orderNow('Samosa',30)">Order Now</button></div>
+    <div class="card"><img src="https://th.bing.com/th/id/OIP.fRZW1j0fLNdRzYyxRcu8wgHaFj?w=227&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Pav Bhaji"><h3>Pav Bhaji</h3><p>Buttery pav with spicy bhaji</p><p class="price">₹130</p><button onclick="orderNow('Pav Bhaji',130)">Order Now</button></div>
+    <div class="card"><img src="https://th.bing.com/th/id/OIP.FP-u-YRY6Gt86cb0Pq1OBAHaE8?w=286&h=191&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Rajma Chawal"><h3>Rajma Chawal</h3><p>Red beans with rice</p><p class="price">₹120</p><button onclick="orderNow('Rajma Chawal',120)">Order Now</button></div>
+    <div class="card"><img src="https://th.bing.com/th/id/OIP.bAi4BAmtk6OyVLcGA1fu0wHaHa?w=208&h=208&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Noodles"><h3>Noodles</h3><p>Hakka style stir fry</p><p class="price">₹90</p><button onclick="orderNow('Noodles',90)">Order Now</button></div>
+    <div class="card"><img src="https://th.bing.com/th/id/OIP.B32bansRI7RS3yfbUSEBNwHaHa?w=182&h=182&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Gulab Jamun"><h3>Gulab Jamun</h3><p>Sweet & soft dessert</p><p class="price">₹70</p><button onclick="orderNow('Gulab Jamun',70)">Order Now</button></div>
+    <div class="card"><img src="https://th.bing.com/th/id/OIP.YOH0tbUKyYHBZyzpULO_mwHaHa?w=188&h=188&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Ice Cream"><h3>Ice Cream</h3><p>Refreshing chilled dessert</p><p class="price">₹90</p><button onclick="orderNow('Ice Cream',90)">Order Now</button></div>
+    <div class="card"><img src="https://th.bing.com/th/id/OIP.oQXTviC9ctAN9udpruWKTgHaLO?w=203&h=375&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Lassi"><h3>Lassi</h3><p>Cool refreshing yogurt drink</p><p class="price">₹50</p><button onclick="orderNow('Lassi',50)">Order Now</button></div>
+    <div class="card"><img src="https://th.bing.com/th/id/OIP.CbeyiaVOW47UTM5o1g03nQHaFj?w=226&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Coffee"><h3>Coffee</h3><p>Hot brewed coffee</p><p class="price">₹60</p><button onclick="orderNow('Coffee',60)">Order Now</button></div>
+
+  </div>
+
+  <script>
+    function orderNow(item, price) {
+      window.location.href = "order.html?item=" + encodeURIComponent(item) + "&price=" + price;
+    }
+  </script>
+</body>
+</html>
