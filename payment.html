@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Options</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #89f7fe, #66a6ff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .payment-box {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      width: 400px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .payment-option {
+      margin: 12px 0;
+    }
+    .details {
+      display: none;
+      margin-top: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background: #f9f9f9;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin: 6px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    .btn {
+      background: linear-gradient(135deg, #00b09b, #96c93d);
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 8px;
+      width: 100%;
+      margin-top: 15px;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="payment-box">
+    <h2>Choose Payment Method 💳</h2>
+
+    <form id="paymentForm">
+      <!-- Options -->
+      <div class="payment-option">
+        <input type="radio" name="payment" value="upi" required> UPI (Google Pay / PhonePe / Paytm)
+        <div class="details" id="upiDetails">
+          <input type="text" placeholder="Enter UPI ID (e.g. yourname@upi)">
+        </div>
+      </div>
+
+      <div class="payment-option">
+        <input type="radio" name="payment" value="card"> Credit / Debit Card
+        <div class="details" id="cardDetails">
+          <input type="text" placeholder="Card Number">
+          <input type="text" placeholder="Expiry Date (MM/YY)">
+          <input type="password" placeholder="CVV">
+        </div>
+      </div>
+
+      <div class="payment-option">
+        <input type="radio" name="payment" value="netbanking"> Net Banking
+        <div class="details" id="bankDetails">
+          <select>
+            <option>Select Bank</option>
+            <option>SBI</option>
+            <option>HDFC</option>
+            <option>ICICI</option>
+            <option>Axis Bank</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="payment-option">
+        <input type="radio" name="payment" value="wallet"> Wallet
+        <div class="details" id="walletDetails">
+          <select>
+            <option>Select Wallet</option>
+            <option>Paytm</option>
+            <option>Amazon Pay</option>
+            <option>PhonePe Wallet</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="payment-option">
+        <input type="radio" name="payment" value="cod"> Cash on Delivery
+        <div class="details" id="codDetails">
+          <p>💵 Pay with Cash when your order arrives.</p>
+        </div>
+      </div>
+
+      <button type="submit" class="btn">Pay Now</button>
+    </form>
+  </div>
+
+  <script>
+    const options = document.querySelectorAll("input[name='payment']");
+    const details = document.querySelectorAll(".details");
+
+    options.forEach(option => {
+      option.addEventListener("change", function() {
+        details.forEach(d => d.style.display = "none"); // hide all
+        if(this.value === "upi") document.getElementById("upiDetails").style.display = "block";
+        if(this.value === "card") document.getElementById("cardDetails").style.display = "block";
+        if(this.value === "netbanking") document.getElementById("bankDetails").style.display = "block";
+        if(this.value === "wallet") document.getElementById("walletDetails").style.display = "block";
+        if(this.value === "cod") document.getElementById("codDetails").style.display = "block";
+      });
+    });
+
+    document.getElementById("paymentForm").addEventListener("submit", function(e){
+      e.preventDefault();
+      let method = document.querySelector("input[name='payment']:checked").value;
+      alert("✅ Payment option selected: " + method.toUpperCase());
+    });
+  </script>
+</body>
+</html>
